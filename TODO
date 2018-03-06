@@ -4,13 +4,13 @@
 
 empleado (Eugenio)
 
-empleado_materia (Javi)
+empleado_clase (Javi)
 
 empleado_gimnasio (Eugenio)
 
 cliente (Javi)
 
-materia_cliente (Sergio)
+clase_cliente (Sergio)
 
 recibo (Sergio)
     recibo-cliente
