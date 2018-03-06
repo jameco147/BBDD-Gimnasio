@@ -11,6 +11,4 @@ CREATE TABLE `empleado` (
 	`puesto` VARCHAR(50) NOT NULL,
 	PRIMARY KEY (`Id`)
 )
-COLLATE='latin1_swedish_ci'
-ENGINE=InnoDB
 ;
