@@ -1,3 +1,32 @@
+## Especificaciones de tablas
+
+### Asignaciones
+
+empleado (Eugenio)
+
+empleado_clase (Javi)
+
+empleado_gimnasio (Eugenio)
+
+cliente (Javi)
+
+clase_cliente (Sergio)
+
+recibo (Sergio)
+    recibo-cliente
+
+gimnasio (Sergio)
+
+aula (Eugenio)
+    aula-gimnasio (Eugenio)
+
+clase (Sergio)
+    clase-aula (Sergio)
+
+materia (Javi)
+
+### Formato
+
 Hay que seguir el formato, ejemplo:
 
 tabla (column1, column2)
@@ -5,6 +34,6 @@ tabla (column1, column2)
     foreign key {column1} -> tabla{columnx}
 
 
-
-persona (id, nombre, apellido, f_nacimiento, dni, direccion, email, telefono)
-    primary key {id}
+recibo (fecha, id_cliente, cantidad)
+    primary key {fecha}
+    foreign key {id_cliente} -> 
