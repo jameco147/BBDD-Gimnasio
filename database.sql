@@ -34,8 +34,10 @@ CREATE TABLE `clase` (
     `hora` TIME,
     `dia_semana` INT(1),
     `cod_aula` INT,
-    PRIMARY KEY (`hora`, `dia_semana`),
-    FOREIGN KEY (`cod_aula`) REFERENCES `aula`(`id`)
+    `cod_materia` INT NOT NULL,
+    PRIMARY KEY (`hora`, `dia_semana`, `cod_aula`),
+    FOREIGN KEY (`cod_aula`) REFERENCES `aula`(`id`),
+    FOREIGN KEY (`cod_materia`) REFERENCES `materia`(`cod_materia`)
 );
 
 CREATE TABLE `cliente` (
