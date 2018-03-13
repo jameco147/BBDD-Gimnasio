@@ -31,11 +31,12 @@ CREATE TABLE `aula` (
 );
 
 CREATE TABLE `clase` (
+    `id` INT AUTO_INCREMENT,
     `hora` TIME,
     `dia_semana` INT(1),
     `cod_aula` INT,
     `cod_materia` INT NOT NULL,
-    PRIMARY KEY (`hora`, `dia_semana`, `cod_aula`),
+    PRIMARY KEY (`id`),
     FOREIGN KEY (`cod_aula`) REFERENCES `aula`(`id`),
     FOREIGN KEY (`cod_materia`) REFERENCES `materia`(`cod_materia`)
 );
@@ -56,18 +57,16 @@ CREATE TABLE `cliente` (
 
 CREATE TABLE `clase_cliente` (
     `id_cliente` INT,
-    `hora` TIME,
-    `dia_semana` INT(1),
-    PRIMARY KEY (`id_cliente`, `hora`, `dia_semana`),
+    `id_clase` INT,
+    PRIMARY KEY (`id_cliente`, `id_clase`),
     FOREIGN KEY (`id_cliente`) REFERENCES `cliente`(`id`),
-    FOREIGN KEY (`hora`, `dia_semana`) REFERENCES `clase`(`hora`, `dia_semana`)
+    FOREIGN KEY (`id_clase`) REFERENCES `clase`(`id`),
 );
 
 CREATE TABLE `empleado_clase` (
 	`id_empleado` INT(11),
-	`hora` TIME,
-	`dia_semana` INT(11),
-	PRIMARY KEY (`id_empleado`, `hora`, `dia_semana`),
+    `id_clase` INT,
+	PRIMARY KEY (`id_empleado`, `id_clase`),
 	CONSTRAINT `FK_empleado_clase_empleado` FOREIGN KEY (`id_empleado`) REFERENCES `empleado` (`id`) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
