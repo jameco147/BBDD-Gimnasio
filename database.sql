@@ -67,7 +67,8 @@ CREATE TABLE `empleado_clase` (
 	`id_empleado` INT(11),
     `id_clase` INT,
 	PRIMARY KEY (`id_empleado`, `id_clase`),
-	CONSTRAINT `FK_empleado_clase_empleado` FOREIGN KEY (`id_empleado`) REFERENCES `empleado` (`id`) ON UPDATE CASCADE ON DELETE CASCADE
+	FOREIGN KEY (`id_empleado`) REFERENCES `empleado`(`id`),
+    FOREIGN KEY (`id_clase`) REFERENCES `clase`(`id`)
 );
 
 CREATE TABLE `empleado_gimnasio` (
